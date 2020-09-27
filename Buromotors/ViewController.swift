@@ -16,7 +16,21 @@ class ViewController: UIViewController, URLSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createUi()
+    }
+    
+    func createUi() {
+//        loginForm.textColor = .
+        loginButton.layer.backgroundColor = #colorLiteral(red: 0.3529411765, green: 0.4352941176, blue: 0.9764705882, alpha: 1)
+        loginButton.layer.cornerRadius = 10
+        
+        loginForm.layer.borderWidth = 1
+        loginForm.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        loginForm.layer.cornerRadius = 10
+        
+        passwordForm.layer.borderWidth = 1
+        passwordForm.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        passwordForm.layer.cornerRadius = 10
     }
     
     

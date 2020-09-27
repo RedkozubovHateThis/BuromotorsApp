@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="7Fd-Uf-0S0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 1645" translatesAutoresizingMaskIntoConstraints="NO" id="7Fd-Uf-0S0">
                                 <rect key="frame" x="44" y="324" width="327" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -31,6 +31,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="726.5" height="171"/>
+        <image name="Group 1645" width="616" height="616"/>
     </resources>
 </document>

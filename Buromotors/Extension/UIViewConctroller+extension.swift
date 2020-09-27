@@ -17,6 +17,7 @@ extension UIViewController {
         let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
             print("You've pressed default");
         }
+        
         alertController.addAction(action1)
         self.present(alertController, animated: true, completion: nil)
     }
