@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class VehicleMileage {
+    
+    var id = ""
+    var type = ""
+    var mileage = 0
+    var deleted = true
+    
+    init(vehicleMileageModel: VehicleMileageModel) {
+        id = vehicleMileageModel.id
+        type = vehicleMileageModel.type
+        if let attributes = vehicleMileageModel.attributes {
+            mileage = attributes.mileage
+            deleted = attributes.deleted
+        }
+    }
+}

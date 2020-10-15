@@ -13,6 +13,21 @@ class ServiceDocumentModel: Mappable {
     
     var id = ""
     var type = ""
+    var attributes : ServiceAttributes!
+
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        type <- map["type"]
+        attributes <- map["attributes"]
+    }
+}
+
+class ServiceAttributes : Mappable {
     var number = ""
     var reason = ""
     var masterFio = ""
@@ -23,9 +38,8 @@ class ServiceDocumentModel: Mappable {
     required convenience init?(map: Map) {
         self.init()
     }
+    
     func mapping(map: Map) {
-        id <- map["id"]
-        type <- map["type"]
         number <- map["number"]
         reason <- map["reason"]
         masterFio <- map["masterFio"]

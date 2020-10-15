@@ -12,15 +12,29 @@ import ObjectMapper
 class VehicleMileageModel: Mappable {
     var id = ""
     var type = ""
-    var mileage = 0
+    var attributes: VehicleMileageAttributes?
     
     required convenience init?(map: Map) {
         self.init()
     }
+    
     func mapping(map: Map) {
         id <- map["id"]
         type <- map["type"]
-        mileage <- map["mileage"]
+        attributes <- map["attributes"]
     }
 }
 
+class VehicleMileageAttributes : Mappable {
+    var mileage = 0
+    var deleted = true
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        mileage <- map["mileage"]
+        deleted <- map["deleted"]
+    }
+}

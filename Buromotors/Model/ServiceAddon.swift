@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+class ServiceAddon {
+    var id = ""
+    var type = ""
+    var count = 0
+    var cost = 0.0
+    var name = ""
+    var number = ""
+    
+    init(serviceAddonModel: ServiceAddonModel) {
+        id = serviceAddonModel.id
+        type = serviceAddonModel.type
+        number = serviceAddonModel.attributes.number
+        count = serviceAddonModel.attributes.count
+        name = serviceAddonModel.attributes.name
+        number = serviceAddonModel.attributes.number
+    }
+}

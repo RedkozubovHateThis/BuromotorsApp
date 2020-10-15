@@ -24,6 +24,8 @@ class TokenService {
         refresh_token = value["refresh_token"].stringValue
         scope = value["scope"].stringValue
         expires_in = value["expires_in"].intValue
+        
+        print("access_token>", access_token)
     }
 }
 

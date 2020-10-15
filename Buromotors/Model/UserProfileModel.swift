@@ -12,14 +12,7 @@ import ObjectMapper
 class UserProfileModel: Mappable {
     var id = ""
     var type = ""
-//    var attributes = ""
-    var firstName = ""
-    var lastName = ""
-    var middleName = ""
-    var inn = ""
-    var address = ""
-    var phone = ""
-    var email = ""
+    var attributes: UserAttributes!
     
     required convenience init?(map: Map) {
         self.init()
@@ -27,41 +20,47 @@ class UserProfileModel: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         type <- map["type"]
-//        attributes <- map["attributes"]
+        attributes <- map["attributes"]
+    }
+}
+
+
+
+class UserAttributes : Mappable {
+    var firstName = ""
+    var lastName = ""
+    var middleName = ""
+    var name = ""
+    var inn = ""
+    var address = ""
+    var phone = ""
+    var email = ""
+    var enable = true
+    var balance = 0
+    var serviceWorkPrice = 0.0
+    var serviceGoodsCost = 0.0
+    var fio = ""
+    
+    
+    
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
         firstName <- map["firstName"]
         lastName <- map["lastName"]
         middleName <- map["middleName"]
+        name <- map["name"]
         inn <- map["inn"]
         address <- map["address"]
         phone <- map["phone"]
         email <- map["email"]
-        
-//        var attributes: [Attributes]?
-//        attributes <- map["attributes"]
+        serviceWorkPrice <- map["serviceWorkPrice"]
+        serviceGoodsCost <- map["serviceGoodsCost"]
+        fio <- map["fio"]
     }
 }
 
-//struct Attributes {
-//      var firstName = ""
-//      var lastName = ""
-//      var middleName = ""
-//      var inn = ""
-//      var address = ""
-//      var phone = ""
-//      var email = ""
-//}
-//
-//extension Attributes: Mappable {
-//    init?(map: Map) {
-//    }
-//
-//    mutating func mapping(map: Map) {
-//        firstName <- map["firstName"]
-//        lastName <- map["lastName"]
-//        middleName <- map["middleName"]
-//        inn <- map["inn"]
-//        address <- map["address"]
-//        phone <- map["phone"]
-//        email <- map["email"]
-//    }
-//}
+

@@ -1,8 +1,8 @@
 //
-//  ProfileService.swift
+//  AdvertisingService.swift
 //  Buromotors
 //
-//  Created by Ахмед Фокичев on 25.09.2020.
+//  Created by Anton Redkozubov on 15.10.2020.
 //  Copyright © 2020 Anton Redkozubov. All rights reserved.
 //
 
@@ -11,15 +11,13 @@ import Alamofire
 import SwiftyJSON
 import ObjectMapper
 
-
-class ProfileService {
+class AdvertisingService {
+    static let shared = AdvertisingService()
+    var myAdvertising: AdEntity?
     
-    static let shared = ProfileService()
-    var myProfile: UserProfile?
-    
-    func loadMyProfile(token: String, completion: @escaping (_ success: Bool, _ error: String) -> Void) {
+    func loadAdvertising(token: String, completion: @escaping (_ success: Bool, _ error: String) -> Void) {
         
-        let url = "https://service.buromotors.ru:8080/api/external/users/currentUser"
+        let url = URLs.advertisingUrl
         let parameters: Parameters = ["": ""]
         let authorization =  "Bearer " + token
         
@@ -38,14 +36,14 @@ class ProfileService {
                 print("success")
                 let json = JSON(value)
                 if let dict = json["data"].dictionaryObject {
-                    if let userProfileModel = Mapper<UserProfileModel>().map(JSON: dict) {
-                        let userProfile = UserProfile(userProfileModel: userProfileModel)
-                        self.myProfile = userProfile
+                    if let adEntityModel = Mapper<AdEntityModel>().map(JSON: dict) {
+                        let adEntityModel = AdEntity(adEntityModel: adEntityModel)
+                        self.myAdvertising = adEntityModel
                     }
                 }
                     
-                print("userId>",ProfileService.shared.myProfile?.userId)
-                print("profileType>",ProfileService.shared.myProfile?.profileType)
+                print("json>",json)
+                
                 
                 completion(true,"")
                 return
@@ -57,4 +55,3 @@ class ProfileService {
         }
     }
 }
-

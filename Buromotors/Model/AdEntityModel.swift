@@ -1,19 +1,19 @@
 //
-//  CustomerModel.swift
+//  AdEntityModel.swift
 //  Buromotors
 //
-//  Created by Anton Redkozubov on 27.09.2020.
+//  Created by Anton Redkozubov on 13.10.2020.
 //  Copyright © 2020 Anton Redkozubov. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-class CustomerModel: Mappable {
+class AdEntityModel: Mappable {
     
     var id = ""
     var type = ""
-    var attributes : CustomerAttributes!
+    var attributes : AdEntityAttributes!
 
     
     required convenience init?(map: Map) {
@@ -27,22 +27,33 @@ class CustomerModel: Mappable {
 }
 
 
-class CustomerAttributes : Mappable {
-    var address = ""
+class AdEntityAttributes : Mappable {
+    var current: Bool = false
+    var deleted: Bool = false
     var phone = ""
     var name = ""
-    var inn = ""
+    var description = ""
+    var active: Bool = false
+    var url = ""
     var email = ""
+    var sideOffer: Bool = false
+    var createDate = ""
     
     required convenience init?(map: Map) {
         self.init()
     }
     
     func mapping(map: Map) {
-        address <- map["address"]
+        current <- map["current"]
+        deleted <- map["deleted"]
         phone <- map["phone"]
         name <- map["name"]
-        inn <- map["inn"]
+        description <- map["description"]
+        active <- map["active"]
+        url <- map["url"]
         email <- map["email"]
+        sideOffer <- map["sideOffer"]
+        createDate <- map["createDate"]
     }
 }
+
