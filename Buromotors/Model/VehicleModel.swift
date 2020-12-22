@@ -14,6 +14,7 @@ class VehicleModel: Mappable {
     var id = ""
     var type = ""
     var attributes : VehicleAttributes?
+    var relationships : VehicleRelationships!
     
     
     required convenience init?(map: Map) {
@@ -24,6 +25,7 @@ class VehicleModel: Mappable {
         id <- map["id"]
         type <- map["type"]
         attributes <- map["attributes"]
+        relationships <- map["relationships"]
     }
 }
 
@@ -45,5 +47,19 @@ class VehicleAttributes : Mappable {
         regNumber <- map["regNumber"]
         year <- map["year"]
         //vinNumber <- map["vinNumber"]
+    }
+}
+
+class VehicleRelationships: Mappable {
+    var id = ""
+    var type = ""
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        type <- map["type"]
     }
 }

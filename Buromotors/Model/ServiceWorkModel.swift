@@ -33,6 +33,7 @@ class ServiceWorkAttributes : Mappable {
     var price = 0.0
     var timeValue = 0.0
     var number = ""
+    var name = ""
     
     required convenience init?(map: Map) {
         self.init()
@@ -44,5 +45,6 @@ class ServiceWorkAttributes : Mappable {
         price <- map["price"]
         timeValue <- map["timeValue"]
         number <- map["number"]
+        name <- map["name"]
     }
 }

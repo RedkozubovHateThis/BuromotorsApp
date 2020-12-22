@@ -14,6 +14,7 @@ class UserProfileModel: Mappable {
     var type = ""
     var attributes: UserAttributes!
     
+    
     required convenience init?(map: Map) {
         self.init()
     }
@@ -23,6 +24,7 @@ class UserProfileModel: Mappable {
         attributes <- map["attributes"]
     }
 }
+
 
 
 
@@ -39,8 +41,10 @@ class UserAttributes : Mappable {
     var balance = 0
     var serviceWorkPrice = 0.0
     var serviceGoodsCost = 0.0
-    var fio = ""
-    
+    var byFio = ""
+    var deleted = false
+    var autoRegister = false
+    var rawPassword = ""
     
     
     
@@ -59,7 +63,10 @@ class UserAttributes : Mappable {
         email <- map["email"]
         serviceWorkPrice <- map["serviceWorkPrice"]
         serviceGoodsCost <- map["serviceGoodsCost"]
-        fio <- map["fio"]
+        byFio <- map["byFio"]
+        deleted <- map["deleted"]
+        autoRegister <- map["autoRegister"]
+        rawPassword <- map["rawPassword"]
     }
 }
 

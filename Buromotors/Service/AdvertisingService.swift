@@ -18,6 +18,8 @@ class AdvertisingService {
     func loadAdvertising(token: String, completion: @escaping (_ success: Bool, _ error: String) -> Void) {
         
         let url = URLs.advertisingUrl
+        print("loadAdvertising>url>", url)
+        
         let parameters: Parameters = ["": ""]
         let authorization =  "Bearer " + token
         
@@ -29,7 +31,7 @@ class AdvertisingService {
         AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: _headers).responseJSON { response in
             
             let statusCode = response.response?.statusCode ?? 0
-            print("statusCode>",statusCode)
+            print("loadAdvertising>statusCode>",statusCode)
     
             switch response.result {
             case .success(let value):
@@ -39,6 +41,9 @@ class AdvertisingService {
                     if let adEntityModel = Mapper<AdEntityModel>().map(JSON: dict) {
                         let adEntityModel = AdEntity(adEntityModel: adEntityModel)
                         self.myAdvertising = adEntityModel
+                        print("loadAdvertising>",adEntityModel.createDate)
+                        print("loadAdvertising>",adEntityModel.description)
+                        
                     }
                 }
                     

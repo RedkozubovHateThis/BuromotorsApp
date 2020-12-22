@@ -16,6 +16,7 @@ class ServiceWork {
     var price = 0.0
     var timeValue = 0.0
     var number = ""
+    var name = ""
     
     init(serviceWorkModel: ServiceWorkModel) {
         id = serviceWorkModel.id
@@ -25,5 +26,6 @@ class ServiceWork {
         priceNorm = serviceWorkModel.attributes.priceNorm
         price = serviceWorkModel.attributes.price
         timeValue = serviceWorkModel.attributes.timeValue
+        name = serviceWorkModel.attributes.name
     }
 }

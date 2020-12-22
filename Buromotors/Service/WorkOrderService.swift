@@ -13,14 +13,9 @@ import ObjectMapper
 
 class WorkOrderService {
     
-    static let shared = WorkOrderService()
-    var myWorkOrder: ServiceWork?
-    var myAddon: ServiceAddon?
-    var myOrder: ServiceDocument?
-    
-    func loadMyWorkInOrder(token: String, completion: @escaping (_ success: Bool, _ error: String) -> Void) {
+    func loadMyWorkInOrder(orderId: String, token: String, completion: @escaping ( _ list: [ServiceWork],_ success: Bool, _ error: String) -> Void) {
         
-        let url = URLs.serviceWorkUrl + "\(myOrder?.id)/serviceWorks"
+        let url = URLs.serviceWorkUrl + "\(orderId)/serviceWorks"
         let parameters: Parameters = ["": ""]
         let authorization =  "Bearer " + token
         
@@ -34,66 +29,66 @@ class WorkOrderService {
             let statusCode = response.response?.statusCode ?? 0
             print("statusCode>",statusCode)
     
+            var serviceWorks = [ServiceWork]()
+            
             switch response.result {
             case .success(let value):
-                print("success")
+                
                 let json = JSON(value)
-                if let dict = json["data"].dictionaryObject {
-                    if let serviceWorkModel = Mapper<ServiceWorkModel>().map(JSON: dict) {
-                        let serviceWorkProfile = ServiceWork(serviceWorkModel: serviceWorkModel)
-                        self.myWorkOrder = serviceWorkProfile
+                
+                if let list = Mapper<ServiceWorkModel>().mapArray(JSONObject: json["data"].object) {
+                    for doc in list {
+                        let serviceWork = ServiceWork(serviceWorkModel: doc)
+                        serviceWorks.append(serviceWork)
                     }
                 }
-                    
-                print("json>",json)
-                
-                
-                completion(true,"")
+                               
+                completion(serviceWorks, true, "")
                 return
             case .failure(let error):
                 print("failure")
-                completion(false, error.localizedDescription)
+                completion(serviceWorks, false, error.localizedDescription)
                 return
             }
         }
     }
     
-    func loadMyAddonInOrder(token: String, completion: @escaping (_ success: Bool, _ error: String) -> Void) {
-        
-        let url = URLs.serviceWorkUrl + "\(myOrder?.id)/serviceAddons"
+    func loadMyAddonInOrder(myOrderId: String,token: String, completion: @escaping ( _ list: [ServiceAddon],_ success: Bool, _ error: String) -> Void) {
+
+        let url = URLs.serviceWorkUrl + "\(myOrderId)/serviceAddons"
         let parameters: Parameters = ["": ""]
         let authorization =  "Bearer " + token
-        
+
         let _headers: HTTPHeaders = [
             "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": "\(authorization)",
         ]
-        
+
         AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: _headers).responseJSON { response in
-            
+
             let statusCode = response.response?.statusCode ?? 0
             print("statusCode>",statusCode)
-    
+            
+            var serviceAddons = [ServiceAddon]()
+
             switch response.result {
             case .success(let value):
-                print("success")
+                
                 let json = JSON(value)
-                if let dict = json["data"].dictionaryObject {
-                    if let serviceAddonModel = Mapper<ServiceAddonModel>().map(JSON: dict) {
-                        let serviceAddonProfile = ServiceAddon(serviceAddonModel: serviceAddonModel)
-                        self.myAddon = serviceAddonProfile
+                
+                if let list = Mapper<ServiceAddonModel>().mapArray(JSONObject: json["data"].object) {
+                    for doc in list {
+                        let serviceAddon = ServiceAddon(serviceAddonModel: doc)
+                        serviceAddons.append(serviceAddon)
                     }
                 }
-                    
-                print("json>",json)
-                
-                
-                completion(true,"")
-                return
+                               
+                completion(serviceAddons, true, "")
+
             case .failure(let error):
                 print("failure")
-                completion(false, error.localizedDescription)
-                return
+                completion(serviceAddons,false, error.localizedDescription)
+
             }
         }
     }

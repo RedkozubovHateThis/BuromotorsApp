@@ -2,7 +2,7 @@
 //  TokenService.swift
 //  Buromotors
 //
-//  Created by Ахмед Фокичев on 23.09.2020.
+//  Created by Anton Redkozubov on 23.09.2020.
 //  Copyright © 2020 Anton Redkozubov. All rights reserved.
 //
 
@@ -14,10 +14,26 @@ class TokenService {
     
     static let shared = TokenService()
     
-    var access_token = ""
-    var refresh_token = ""
     var expires_in = 0
     var scope = ""
+    
+    var access_token: String {
+        get {
+            return getString(key: "access_token")
+        }
+        set(token) {
+            setString(key: "access_token", token)
+        }
+    }
+    
+    var refresh_token: String {
+        get {
+            return getString(key: "refresh_token")
+        }
+        set(token) {
+            setString(key: "refresh_token", token)
+        }
+    }
     
     func config(value: JSON) {
         access_token = value["access_token"].stringValue
@@ -27,5 +43,18 @@ class TokenService {
         
         print("access_token>", access_token)
     }
+    
+    
+    private func getString(key: String) -> String {
+        let defaults = UserDefaults.standard
+        return defaults.string(forKey: key) ?? ""
+    }
+    
+    private func setString(key: String, _ value: String) {
+        let defaults = UserDefaults.standard
+        defaults.set(value, forKey: key)
+        defaults.synchronize()
+    }
+    
 }
 

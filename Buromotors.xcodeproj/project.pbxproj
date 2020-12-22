@@ -7,26 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		58EA2F87C97EC8150BE41F10 /* Pods_Buromotors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAFB0A0AFE664578ECCA648 /* Pods_Buromotors.framework */; };
+		1345349FBA0D189D4C4E2096 /* Pods_Buromotors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5512FBF495F8D18F4C0EDD5E /* Pods_Buromotors.framework */; };
 		8B13CA112524A4C700B392C7 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13CA102524A4C700B392C7 /* MyProfileViewController.swift */; };
 		8B6A87D12529E67A003C0231 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A87D02529E67A003C0231 /* ProfileType.swift */; };
 		8B6A87D62529E92B003C0231 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A87D52529E92B003C0231 /* URLs.swift */; };
+		8BB164942545DFCF001A4502 /* WorksViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB164922545DFCF001A4502 /* WorksViewCell.swift */; };
+		8BB164952545DFCF001A4502 /* WorksViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB164932545DFCF001A4502 /* WorksViewCell.xib */; };
 		8BC63B80251E038F0030A7B0 /* Dictionary+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC63B7F251E038F0030A7B0 /* Dictionary+extension.swift */; };
 		8BC63B85251E056A0030A7B0 /* UIViewConctroller+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC63B84251E056A0030A7B0 /* UIViewConctroller+extension.swift */; };
 		8BC63B88251E079F0030A7B0 /* OrdersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC63B87251E079F0030A7B0 /* OrdersListViewController.swift */; };
 		8BC63B8B251E09BF0030A7B0 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC63B8A251E09BF0030A7B0 /* ProfileService.swift */; };
 		8BC63B8F251E0CB70030A7B0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC63B8E251E0CB70030A7B0 /* UserProfile.swift */; };
 		8BC63B99251E0DE60030A7B0 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC63B98251E0DE60030A7B0 /* UserProfileModel.swift */; };
+		8BDEF90D257A6E7700769786 /* RegUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEF90C257A6E7700769786 /* RegUserViewController.swift */; };
 		8BEB4B03251B65AC00E2805F /* AthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB4B02251B65AC00E2805F /* AthService.swift */; };
 		8BEB4B06251B880700E2805F /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB4B05251B880700E2805F /* TokenService.swift */; };
+		8BF6E31E2555CCF40074A10A /* DocFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF6E31D2555CCF40074A10A /* DocFilter.swift */; };
 		8BF86229252DE5EC00371B07 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF86227252DE5EC00371B07 /* DocumentTableViewCell.swift */; };
 		8BF8622A252DE5EC00371B07 /* DocumentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF86228252DE5EC00371B07 /* DocumentTableViewCell.xib */; };
+		ED034BC8253C5403003239BA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED034BC7253C5403003239BA /* RegistrationViewController.swift */; };
 		ED2DD852251CFE6500F4566F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DD851251CFE6500F4566F /* MainViewController.swift */; };
 		ED3238F225261D1800FD9F6F /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3238F125261D1800FD9F6F /* OrderService.swift */; };
+		ED46F1842546DD6D00B9B70A /* ZapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED46F1822546DD6D00B9B70A /* ZapTableViewCell.swift */; };
+		ED46F1852546DD6D00B9B70A /* ZapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED46F1832546DD6D00B9B70A /* ZapTableViewCell.xib */; };
+		ED5C4B04254961F000645CE2 /* DocumentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5C4B03254961F000645CE2 /* DocumentStatus.swift */; };
 		ED6613A72535B61C00A98419 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6613A62535B61C00A98419 /* UserInfoModel.swift */; };
 		ED6613AA2535B62C00A98419 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6613A92535B62C00A98419 /* UserInfo.swift */; };
 		ED6613AE2535C50F00A98419 /* AdEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6613AD2535C50F00A98419 /* AdEntity.swift */; };
 		ED6613B22535C52A00A98419 /* AdEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6613B12535C52A00A98419 /* AdEntityModel.swift */; };
+		ED68CF102559599A00E8FC67 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68CF0F2559599A00E8FC67 /* FilterViewController.swift */; };
+		ED6A45AF2541DB1700BA330E /* UserRoleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A45AE2541DB1700BA330E /* UserRoleModel.swift */; };
+		ED6A45B22541DB9400BA330E /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A45B12541DB9400BA330E /* UserRole.swift */; };
+		ED71A3A6253DE1A900324D6C /* ServiceWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71A3A5253DE1A900324D6C /* ServiceWorkViewController.swift */; };
+		ED71A3A9253DE21400324D6C /* ZapServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71A3A8253DE21400324D6C /* ZapServiceViewController.swift */; };
+		ED72C9732549C0D000E10F58 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72C9722549C0D000E10F58 /* Register.swift */; };
+		ED72C9762549C0E400E10F58 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72C9752549C0E400E10F58 /* RegisterModel.swift */; };
+		ED8D9602258A949700FBDE9E /* OrdersDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D9601258A949700FBDE9E /* OrdersDetailsViewController.swift */; };
+		ED8DABCC25483C4900B82EC2 /* PaidStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DABCB25483C4900B82EC2 /* PaidStatus.swift */; };
 		EDA044A52508C54000FDF321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA044A42508C54000FDF321 /* AppDelegate.swift */; };
 		EDA044A72508C54000FDF321 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA044A62508C54000FDF321 /* SceneDelegate.swift */; };
 		EDA044A92508C54000FDF321 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA044A82508C54000FDF321 /* ViewController.swift */; };
@@ -51,28 +68,45 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		117B5FD8B95C64FCDBBF1230 /* Pods-Buromotors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buromotors.debug.xcconfig"; path = "Target Support Files/Pods-Buromotors/Pods-Buromotors.debug.xcconfig"; sourceTree = "<group>"; };
-		2DAFB0A0AFE664578ECCA648 /* Pods_Buromotors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buromotors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D58037131A1917D6248B73D /* Pods-Buromotors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buromotors.release.xcconfig"; path = "Target Support Files/Pods-Buromotors/Pods-Buromotors.release.xcconfig"; sourceTree = "<group>"; };
+		36D617D3361E2C32A74A2413 /* Pods-Buromotors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buromotors.debug.xcconfig"; path = "Target Support Files/Pods-Buromotors/Pods-Buromotors.debug.xcconfig"; sourceTree = "<group>"; };
+		5512FBF495F8D18F4C0EDD5E /* Pods_Buromotors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Buromotors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B13CA102524A4C700B392C7 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		8B6A87D02529E67A003C0231 /* ProfileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
 		8B6A87D52529E92B003C0231 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		8BB164922545DFCF001A4502 /* WorksViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksViewCell.swift; sourceTree = "<group>"; };
+		8BB164932545DFCF001A4502 /* WorksViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorksViewCell.xib; sourceTree = "<group>"; };
 		8BC63B7F251E038F0030A7B0 /* Dictionary+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+extension.swift"; sourceTree = "<group>"; };
 		8BC63B84251E056A0030A7B0 /* UIViewConctroller+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewConctroller+extension.swift"; sourceTree = "<group>"; };
 		8BC63B87251E079F0030A7B0 /* OrdersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewController.swift; sourceTree = "<group>"; };
 		8BC63B8A251E09BF0030A7B0 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		8BC63B8E251E0CB70030A7B0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		8BC63B98251E0DE60030A7B0 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		8BDEF90C257A6E7700769786 /* RegUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegUserViewController.swift; sourceTree = "<group>"; };
 		8BEB4B02251B65AC00E2805F /* AthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthService.swift; sourceTree = "<group>"; };
 		8BEB4B05251B880700E2805F /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		8BF6E31D2555CCF40074A10A /* DocFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocFilter.swift; sourceTree = "<group>"; };
 		8BF86227252DE5EC00371B07 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		8BF86228252DE5EC00371B07 /* DocumentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentTableViewCell.xib; sourceTree = "<group>"; };
-		AD3B88BE554C00703F35AA63 /* Pods-Buromotors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buromotors.release.xcconfig"; path = "Target Support Files/Pods-Buromotors/Pods-Buromotors.release.xcconfig"; sourceTree = "<group>"; };
+		ED034BC7253C5403003239BA /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		ED2DD851251CFE6500F4566F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ED3238F125261D1800FD9F6F /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		ED46F1822546DD6D00B9B70A /* ZapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZapTableViewCell.swift; sourceTree = "<group>"; };
+		ED46F1832546DD6D00B9B70A /* ZapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZapTableViewCell.xib; sourceTree = "<group>"; };
+		ED5C4B03254961F000645CE2 /* DocumentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStatus.swift; sourceTree = "<group>"; };
 		ED6613A62535B61C00A98419 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		ED6613A92535B62C00A98419 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		ED6613AD2535C50F00A98419 /* AdEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdEntity.swift; sourceTree = "<group>"; };
 		ED6613B12535C52A00A98419 /* AdEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdEntityModel.swift; sourceTree = "<group>"; };
+		ED68CF0F2559599A00E8FC67 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		ED6A45AE2541DB1700BA330E /* UserRoleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRoleModel.swift; sourceTree = "<group>"; };
+		ED6A45B12541DB9400BA330E /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
+		ED71A3A5253DE1A900324D6C /* ServiceWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceWorkViewController.swift; sourceTree = "<group>"; };
+		ED71A3A8253DE21400324D6C /* ZapServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZapServiceViewController.swift; sourceTree = "<group>"; };
+		ED72C9722549C0D000E10F58 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		ED72C9752549C0E400E10F58 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		ED8D9601258A949700FBDE9E /* OrdersDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDetailsViewController.swift; sourceTree = "<group>"; };
+		ED8DABCB25483C4900B82EC2 /* PaidStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidStatus.swift; sourceTree = "<group>"; };
 		EDA044A12508C54000FDF321 /* Buromotors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buromotors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA044A42508C54000FDF321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA044A62508C54000FDF321 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,17 +137,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58EA2F87C97EC8150BE41F10 /* Pods_Buromotors.framework in Frameworks */,
+				1345349FBA0D189D4C4E2096 /* Pods_Buromotors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6BC41553F0FA1F79B719A2CD /* Frameworks */ = {
+		2B9784A5BD81FFFEF579986A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2DAFB0A0AFE664578ECCA648 /* Pods_Buromotors.framework */,
+				5512FBF495F8D18F4C0EDD5E /* Pods_Buromotors.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,10 +185,11 @@
 		8BC63B8D251E0CA30030A7B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8B6A87D02529E67A003C0231 /* ProfileType.swift */,
+				8BF6E31D2555CCF40074A10A /* DocFilter.swift */,
 				ED6613A92535B62C00A98419 /* UserInfo.swift */,
 				ED6613A62535B61C00A98419 /* UserInfoModel.swift */,
 				8BC63B8E251E0CB70030A7B0 /* UserProfile.swift */,
-				8B6A87D02529E67A003C0231 /* ProfileType.swift */,
 				8BC63B98251E0DE60030A7B0 /* UserProfileModel.swift */,
 				EDFF96812520EF10002E557A /* ServiceDocument.swift */,
 				EDFF96832520EF24002E557A /* ServiceDocumentModel.swift */,
@@ -170,6 +205,12 @@
 				EDFF96972520F2EA002E557A /* CustomerModel.swift */,
 				ED6613AD2535C50F00A98419 /* AdEntity.swift */,
 				ED6613B12535C52A00A98419 /* AdEntityModel.swift */,
+				ED6A45B12541DB9400BA330E /* UserRole.swift */,
+				ED6A45AE2541DB1700BA330E /* UserRoleModel.swift */,
+				ED8DABCB25483C4900B82EC2 /* PaidStatus.swift */,
+				ED5C4B03254961F000645CE2 /* DocumentStatus.swift */,
+				ED72C9722549C0D000E10F58 /* Register.swift */,
+				ED72C9752549C0E400E10F58 /* RegisterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +220,10 @@
 			children = (
 				8BF86227252DE5EC00371B07 /* DocumentTableViewCell.swift */,
 				8BF86228252DE5EC00371B07 /* DocumentTableViewCell.xib */,
+				8BB164922545DFCF001A4502 /* WorksViewCell.swift */,
+				8BB164932545DFCF001A4502 /* WorksViewCell.xib */,
+				ED46F1822546DD6D00B9B70A /* ZapTableViewCell.swift */,
+				ED46F1832546DD6D00B9B70A /* ZapTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,8 +231,8 @@
 		96211CC9950C121ACE50851A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				117B5FD8B95C64FCDBBF1230 /* Pods-Buromotors.debug.xcconfig */,
-				AD3B88BE554C00703F35AA63 /* Pods-Buromotors.release.xcconfig */,
+				36D617D3361E2C32A74A2413 /* Pods-Buromotors.debug.xcconfig */,
+				2D58037131A1917D6248B73D /* Pods-Buromotors.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -198,7 +243,7 @@
 				EDA044A32508C54000FDF321 /* Buromotors */,
 				EDA044A22508C54000FDF321 /* Products */,
 				96211CC9950C121ACE50851A /* Pods */,
-				6BC41553F0FA1F79B719A2CD /* Frameworks */,
+				2B9784A5BD81FFFEF579986A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,7 +273,13 @@
 				EDA044AF2508C54100FDF321 /* LaunchScreen.storyboard */,
 				EDA044B22508C54100FDF321 /* Info.plist */,
 				ED2DD851251CFE6500F4566F /* MainViewController.swift */,
+				ED034BC7253C5403003239BA /* RegistrationViewController.swift */,
+				ED71A3A5253DE1A900324D6C /* ServiceWorkViewController.swift */,
+				ED71A3A8253DE21400324D6C /* ZapServiceViewController.swift */,
+				ED68CF0F2559599A00E8FC67 /* FilterViewController.swift */,
 				EDABC23C252F2CE800BC3147 /* OrderDetailsViewController.swift */,
+				ED8D9601258A949700FBDE9E /* OrdersDetailsViewController.swift */,
+				8BDEF90C257A6E7700769786 /* RegUserViewController.swift */,
 			);
 			path = Buromotors;
 			sourceTree = "<group>";
@@ -240,11 +291,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDA044B52508C54100FDF321 /* Build configuration list for PBXNativeTarget "Buromotors" */;
 			buildPhases = (
-				9468496C405CFACF1E86C52B /* [CP] Check Pods Manifest.lock */,
+				6298FDDAC9561B7FADEE0CD8 /* [CP] Check Pods Manifest.lock */,
 				EDA0449D2508C54000FDF321 /* Sources */,
 				EDA0449E2508C54000FDF321 /* Frameworks */,
 				EDA0449F2508C54000FDF321 /* Resources */,
-				794EFD411B77D4632A65A5AF /* [CP] Embed Pods Frameworks */,
+				972D740896D7361031032419 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF8622A252DE5EC00371B07 /* DocumentTableViewCell.xib in Resources */,
+				ED46F1852546DD6D00B9B70A /* ZapTableViewCell.xib in Resources */,
+				8BB164952545DFCF001A4502 /* WorksViewCell.xib in Resources */,
 				EDA044B12508C54100FDF321 /* LaunchScreen.storyboard in Resources */,
 				EDA044AE2508C54100FDF321 /* Assets.xcassets in Resources */,
 				EDA044AC2508C54000FDF321 /* Main.storyboard in Resources */,
@@ -303,24 +356,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		794EFD411B77D4632A65A5AF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Buromotors/Pods-Buromotors-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Buromotors/Pods-Buromotors-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Buromotors/Pods-Buromotors-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9468496C405CFACF1E86C52B /* [CP] Check Pods Manifest.lock */ = {
+		6298FDDAC9561B7FADEE0CD8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,6 +378,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		972D740896D7361031032419 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Buromotors/Pods-Buromotors-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Buromotors/Pods-Buromotors-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Buromotors/Pods-Buromotors-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -354,36 +407,51 @@
 				EDFF96822520EF10002E557A /* ServiceDocument.swift in Sources */,
 				EDFF968C2520F186002E557A /* ServiceAddonModel.swift in Sources */,
 				EDE21DFB253864600039278E /* AdvertisingService.swift in Sources */,
+				ED71A3A6253DE1A900324D6C /* ServiceWorkViewController.swift in Sources */,
+				8BF6E31E2555CCF40074A10A /* DocFilter.swift in Sources */,
+				ED68CF102559599A00E8FC67 /* FilterViewController.swift in Sources */,
 				EDFF96982520F2EA002E557A /* CustomerModel.swift in Sources */,
 				EDFF96962520F2DE002E557A /* Customer.swift in Sources */,
 				EDA044A92508C54000FDF321 /* ViewController.swift in Sources */,
+				ED6A45B22541DB9400BA330E /* UserRole.swift in Sources */,
+				ED72C9732549C0D000E10F58 /* Register.swift in Sources */,
+				ED72C9762549C0E400E10F58 /* RegisterModel.swift in Sources */,
 				EDFF96942520F29B002E557A /* VehicleMileageModel.swift in Sources */,
 				8BEB4B03251B65AC00E2805F /* AthService.swift in Sources */,
 				8BC63B88251E079F0030A7B0 /* OrdersListViewController.swift in Sources */,
 				ED6613A72535B61C00A98419 /* UserInfoModel.swift in Sources */,
 				EDFF96902520F202002E557A /* VehicleModel.swift in Sources */,
 				EDA044A52508C54000FDF321 /* AppDelegate.swift in Sources */,
+				8BB164942545DFCF001A4502 /* WorksViewCell.swift in Sources */,
 				EDFF968E2520F1F7002E557A /* Vehicle.swift in Sources */,
 				ED2DD852251CFE6500F4566F /* MainViewController.swift in Sources */,
 				EDFF968A2520F17D002E557A /* ServiceAddon.swift in Sources */,
 				8BF86229252DE5EC00371B07 /* DocumentTableViewCell.swift in Sources */,
 				ED6613AE2535C50F00A98419 /* AdEntity.swift in Sources */,
 				8BC63B99251E0DE60030A7B0 /* UserProfileModel.swift in Sources */,
+				ED034BC8253C5403003239BA /* RegistrationViewController.swift in Sources */,
 				EDFF96922520F28C002E557A /* VehicleMileage.swift in Sources */,
 				EDABC23B252F1B6400BC3147 /* WorkOrderService.swift in Sources */,
+				ED8D9602258A949700FBDE9E /* OrdersDetailsViewController.swift in Sources */,
+				ED6A45AF2541DB1700BA330E /* UserRoleModel.swift in Sources */,
 				EDA044A72508C54000FDF321 /* SceneDelegate.swift in Sources */,
 				8BC63B85251E056A0030A7B0 /* UIViewConctroller+extension.swift in Sources */,
 				8BC63B8F251E0CB70030A7B0 /* UserProfile.swift in Sources */,
+				ED71A3A9253DE21400324D6C /* ZapServiceViewController.swift in Sources */,
 				8BC63B80251E038F0030A7B0 /* Dictionary+extension.swift in Sources */,
+				ED46F1842546DD6D00B9B70A /* ZapTableViewCell.swift in Sources */,
 				EDABC23D252F2CE800BC3147 /* OrderDetailsViewController.swift in Sources */,
 				ED6613B22535C52A00A98419 /* AdEntityModel.swift in Sources */,
 				EDFF96882520F09F002E557A /* ServiceWorkModel.swift in Sources */,
 				8B6A87D12529E67A003C0231 /* ProfileType.swift in Sources */,
 				ED3238F225261D1800FD9F6F /* OrderService.swift in Sources */,
 				EDFF96842520EF24002E557A /* ServiceDocumentModel.swift in Sources */,
+				ED5C4B04254961F000645CE2 /* DocumentStatus.swift in Sources */,
 				8BEB4B06251B880700E2805F /* TokenService.swift in Sources */,
 				8B6A87D62529E92B003C0231 /* URLs.swift in Sources */,
+				ED8DABCC25483C4900B82EC2 /* PaidStatus.swift in Sources */,
 				ED6613AA2535B62C00A98419 /* UserInfo.swift in Sources */,
+				8BDEF90D257A6E7700769786 /* RegUserViewController.swift in Sources */,
 				8BC63B8B251E09BF0030A7B0 /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,7 +596,7 @@
 		};
 		EDA044B62508C54100FDF321 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 117B5FD8B95C64FCDBBF1230 /* Pods-Buromotors.debug.xcconfig */;
+			baseConfigurationReference = 36D617D3361E2C32A74A2413 /* Pods-Buromotors.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,7 +615,7 @@
 		};
 		EDA044B72508C54100FDF321 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD3B88BE554C00703F35AA63 /* Pods-Buromotors.release.xcconfig */;
+			baseConfigurationReference = 2D58037131A1917D6248B73D /* Pods-Buromotors.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

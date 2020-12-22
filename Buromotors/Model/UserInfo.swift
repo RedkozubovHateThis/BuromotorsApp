@@ -11,13 +11,14 @@ import Foundation
 class UserInfo {
     var userId = ""
     var profileType = ProfileType.none
+    var isAutoRegistered: Bool = false
     var lastName = ""
     var currentAdSubscriptionExpired: Bool = false
     var midisAutoRegistereddleName: Bool = false
     var bankBic = ""
     var bankName = ""
     var fio = ""
-    var enabled: Bool = false
+    var enabled: Bool = true
     var balance: Double = 0.0
     var enable = true
     var serviceGoodsCost: Double = 0.0
@@ -37,11 +38,13 @@ class UserInfo {
     var fullFio = ""
     var rawPassword = ""
     var username = ""
+    var relationships = UserRelationships()
     
     init(userInfoModel: UserInfoModel) {
         userId = userInfoModel.id
         profileType = ProfileType(rawValue: userInfoModel.type) ?? ProfileType.none
         firstName = userInfoModel.attributes.firstName
+        isAutoRegistered = userInfoModel.attributes.isAutoRegistered
         lastName = userInfoModel.attributes.lastName
         middleName = userInfoModel.attributes.middleName
         shortFio = userInfoModel.attributes.shortFio
@@ -51,5 +54,6 @@ class UserInfo {
 //        servicePrice = userInfoModel.attributes.serviceWorkPrice
         serviceGoodsCost = userInfoModel.attributes.serviceGoodsCost
 //        email = userInfoModel.attributes.email
+        relationships = userInfoModel.relationships
     }
 }
