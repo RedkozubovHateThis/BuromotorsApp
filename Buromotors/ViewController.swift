@@ -35,12 +35,9 @@ class ViewController: UIViewController, URLSessionDelegate {
             }
         }
         
-//        let token = TokenService.shared.access_token
-//        self.loadMyProfile(token: token)
     }
     
     func createUi() {
-//        loginForm.textColor = .
         loginButton.layer.backgroundColor = #colorLiteral(red: 0.3529411765, green: 0.4352941176, blue: 0.9764705882, alpha: 1)
         loginButton.layer.cornerRadius = 10
         
