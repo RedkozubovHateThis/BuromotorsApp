@@ -57,31 +57,15 @@ extension ServiceWorkViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // let cell = UITableViewCell()
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorksViewCell", for: indexPath) as! WorksViewCell
         
         let serviceWork = serviceWorks[indexPath.row]
         
         cell.setConfig(serviceWork: serviceWork)
-       // cell.textLabel?.text = "name=" + serviceWork.name + " price=" + String(serviceWork.price) + "count>" + String(serviceWork.count)
-
+        
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        // withIdentifier: "DocumentTableViewCell для XIB
-//        // as! DocumentTableViewCell для Swift файла
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "WorksTableViewCell", for: indexPath) as! WorksTableViewCell
-//        let serviceWork = serviceWorks[indexPath.row]
-//
-//        if let workId = serviceWork.id {
-//            cell.setConfigWork(serviceWork: workId)
-//        } else {
-//            cell.setConfigWork(serviceWork: nil)
-//        }
-//
-//        return cell
-//    }
     
 }

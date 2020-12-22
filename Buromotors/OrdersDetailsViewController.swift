@@ -57,6 +57,7 @@ class OrdersDetailsViewController: UIViewController {
     private lazy var documentStatusTextField: UITextField = {
         let docStatusField = UITextField()
         
+        docStatusField.isEnabled = false
         docStatusField.borderStyle = .roundedRect
         
         if let documentStatus = myOrder?.status {
@@ -83,6 +84,7 @@ class OrdersDetailsViewController: UIViewController {
     private lazy var paidStatusTextField: UITextField = {
         let paidStatusField = UITextField()
         
+        paidStatusField.isEnabled = false
         paidStatusField.borderStyle = .roundedRect
         
         if let paidStatus = myOrder?.paidStatus {
@@ -107,6 +109,7 @@ class OrdersDetailsViewController: UIViewController {
     private lazy var remontStartTextField: UITextField = {
         let remontStartField = UITextField()
         
+        remontStartField.isEnabled = false
         remontStartField.borderStyle = .roundedRect
         
         let formatter3 = DateFormatter()
@@ -126,6 +129,7 @@ class OrdersDetailsViewController: UIViewController {
     private lazy var carModelTextField: UITextField = {
         let carModelField = UITextField()
         
+        carModelField.isEnabled = false
         carModelField.borderStyle = .roundedRect
         carModelField.text = myVehicle?.modelName
         
@@ -142,6 +146,7 @@ class OrdersDetailsViewController: UIViewController {
     private lazy var regNumberTextField: UITextField = {
         let regNumberField = UITextField()
         
+        regNumberField.isEnabled = false
         regNumberField.borderStyle = .roundedRect
         regNumberField.text = myVehicle?.regNumber
         
@@ -157,6 +162,8 @@ class OrdersDetailsViewController: UIViewController {
     
     private lazy var vinNumberTextField: UITextField = {
         let vinNumberField = UITextField()
+        
+        vinNumberField.isEnabled = false
         vinNumberField.borderStyle = .roundedRect
         vinNumberField.text = myVehicle?.vinNumber
         
@@ -172,6 +179,8 @@ class OrdersDetailsViewController: UIViewController {
     
     private lazy var myVehicleMileageTextField: UITextField = {
         let myVehicleMileageField = UITextField()
+        
+        myVehicleMileageField.isEnabled = false
         myVehicleMileageField.borderStyle = .roundedRect
         let mileage = myVehicleMileage?.mileage ?? 0
         myVehicleMileageField.text = "\(String(mileage)) км"
@@ -188,6 +197,8 @@ class OrdersDetailsViewController: UIViewController {
     
     private lazy var clientTextField: UITextField = {
         let clientField = UITextField()
+        
+        clientField.isEnabled = false
         clientField.text = myCustomer?.name
         clientField.borderStyle = .roundedRect
 
@@ -205,6 +216,8 @@ class OrdersDetailsViewController: UIViewController {
     
     private lazy var serviceTextField: UITextField = {
         let serviceField = UITextField()
+        
+        serviceField.isEnabled = false
         serviceField.borderStyle = .roundedRect
 
         serviceField.text = myOrder?.masterFio
@@ -214,7 +227,11 @@ class OrdersDetailsViewController: UIViewController {
     
     private lazy var tapWorkButton: UIButton = {
         let tapWork = UIButton()
-        tapWork.setTitle("Товары", for: .normal)
+        
+        tapWork.layer.backgroundColor = #colorLiteral(red: 0.3529411765, green: 0.4352941176, blue: 0.9764705882, alpha: 1)
+        tapWork.layer.cornerRadius = 7
+        
+        tapWork.setTitle("Работы", for: .normal)
         tapWork.setTitleColor(.white, for: .normal)
         
         return tapWork
@@ -223,7 +240,11 @@ class OrdersDetailsViewController: UIViewController {
     
     private lazy var tapZapButton: UIButton = {
         let tapZap = UIButton()
-        tapZap.setTitle("Работы", for: .normal)
+        
+        tapZap.layer.backgroundColor = #colorLiteral(red: 0.3529411765, green: 0.4352941176, blue: 0.9764705882, alpha: 1)
+        tapZap.layer.cornerRadius = 7
+        
+        tapZap.setTitle("Товары", for: .normal)
         tapZap.setTitleColor(.white, for: .normal)
         
         return tapZap
@@ -248,22 +269,23 @@ class OrdersDetailsViewController: UIViewController {
     }
     
     @objc func workButtonTapped() {
+        
         print(#function)
         guard let orderId = myOrder?.id else { return }
-        showWorsFromOrder(orderId: orderId)
+        showWorkFromOrder(orderId: orderId)
     }
     
     @objc func zapButtonTapped() {
         
         print(#function)
         guard let orderId = myOrder?.id else { return }
-        showWorsFromOrder(orderId: orderId)
+        showZapFromOrder(orderId: orderId)
         
     }
     
     
-    // Routing
-    func showWorsFromOrder(orderId: String) {
+    // MARK: - Routing
+    func showWorkFromOrder(orderId: String) {
         let popVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ServiceWorkViewController") as! ServiceWorkViewController
         popVC.orderId = orderId
         popVC.modalPresentationStyle = .fullScreen
@@ -283,7 +305,7 @@ class OrdersDetailsViewController: UIViewController {
         print(#function)
         self.dismiss(animated: true, completion: nil)
     }
-    
+    // MARK: - Constrains
     override func loadView() {
         super.loadView()
             
@@ -465,17 +487,18 @@ class OrdersDetailsViewController: UIViewController {
 
         tapWorkButton.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
-            $0.right.equalTo(tapZapButton).offset(-138)
+            $0.right.equalTo(tapZapButton).offset(-180)
             $0.height.equalTo(40)
-            $0.top.equalTo(serviceTextField.snp.bottom).offset(10)
+            $0.top.equalTo(serviceTextField.snp.bottom).offset(16)
+            $0.bottom.equalTo(box).offset(-20)
         }
-//
-//        tapZapButton.snp.makeConstraints {
-//            $0.left.equalTo(tapWorkButton).offset(138)
-//            $0.right.equalToSuperview().offset(-16)
-//            $0.height.equalTo(40)
-//            $0.bottom.equalTo(serviceTextField).offset(-36)
-//        }
+
+        tapZapButton.snp.makeConstraints {
+            $0.left.equalTo(tapWorkButton).offset(180)
+            $0.right.equalToSuperview().offset(-16)
+            $0.height.equalTo(40)
+            $0.bottom.equalTo(box).offset(-20)
+        }
         
     }
 }

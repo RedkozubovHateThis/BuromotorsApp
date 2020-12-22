@@ -127,7 +127,7 @@ class RegistrationViewController: UIViewController {
         }
         
 //        let userProfile = UserProfile(type: type, firstName: firstName, lastName: lastName, middleName: middleName, name: userN, address: address, phone: phone, inn: inn, email: email)
-//
+
         let password = "12345678"
         let rePassword = "12345678"
         
