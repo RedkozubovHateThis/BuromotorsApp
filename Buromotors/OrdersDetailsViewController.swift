@@ -12,6 +12,31 @@ import SnapKit
 
 class OrdersDetailsViewController: UIViewController {
     
+    
+    private enum Constants {
+        // TODO: - Adjust constants
+        static var barViewHeight: CGFloat {
+            switch UIScreen.deviceFamily {
+            case .fifthFamily:
+                return 60
+            case .sixFamily, .plusFamily:
+                return 60
+            case .xFamily, .elevenFamily:
+                return 80
+            }
+        }
+        static var barViewTop: CGFloat {
+            switch UIScreen.deviceFamily {
+            case .fifthFamily:
+                return 0
+            case .sixFamily, .plusFamily:
+                return 0
+            case .xFamily, .elevenFamily:
+                return 0
+            }
+        }
+    }
+    
     var myOrder: ServiceDocument?
     var myVehicle: Vehicle?
     var myVehicleMileage: VehicleMileage?
@@ -31,6 +56,7 @@ class OrdersDetailsViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Назад", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "System", size: 17)
         
         return button
     }()
@@ -252,8 +278,8 @@ class OrdersDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .white
+        
+        settupUi()
         
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         
@@ -261,6 +287,66 @@ class OrdersDetailsViewController: UIViewController {
         
         tapZapButton.addTarget(self, action: #selector(zapButtonTapped), for: .touchUpInside)
 
+    }
+    
+    func settupUi() {
+        view.backgroundColor = .white
+        
+        documentStatusTextField.layer.borderWidth = 1
+        documentStatusTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        documentStatusTextField.layer.cornerRadius = 10
+        documentStatusTextField.borderStyle = .none
+        
+        paidStatusTextField.layer.borderWidth = 1
+        paidStatusTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        paidStatusTextField.layer.cornerRadius = 10
+        paidStatusTextField.borderStyle = .none
+        
+        remontStartTextField.layer.borderWidth = 1
+        remontStartTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        remontStartTextField.layer.cornerRadius = 10
+        remontStartTextField.borderStyle = .none
+        
+        carModelTextField.layer.borderWidth = 1
+        carModelTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        carModelTextField.layer.cornerRadius = 10
+        carModelTextField.borderStyle = .none
+        
+        regNumberTextField.layer.borderWidth = 1
+        regNumberTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        regNumberTextField.layer.cornerRadius = 10
+        regNumberTextField.borderStyle = .none
+        
+        vinNumberTextField.layer.borderWidth = 1
+        vinNumberTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        vinNumberTextField.layer.cornerRadius = 10
+        vinNumberTextField.borderStyle = .none
+        
+        myVehicleMileageTextField.layer.borderWidth = 1
+        myVehicleMileageTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        myVehicleMileageTextField.layer.cornerRadius = 10
+        myVehicleMileageTextField.borderStyle = .none
+        
+        clientTextField.layer.borderWidth = 1
+        clientTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        clientTextField.layer.cornerRadius = 10
+        clientTextField.borderStyle = .none
+        
+        serviceTextField.layer.borderWidth = 1
+        serviceTextField.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        serviceTextField.layer.cornerRadius = 10
+        serviceTextField.borderStyle = .none
+        
+        
+        documentStatusTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        paidStatusTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        remontStartTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        carModelTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        regNumberTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        vinNumberTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        myVehicleMileageTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        clientTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        serviceTextField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
     }
     
     @objc func closeButtonTapped() {
@@ -338,14 +424,15 @@ class OrdersDetailsViewController: UIViewController {
         barView.snp.makeConstraints {
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
-            $0.top.equalToSuperview()
-            $0.height.equalTo(90)
+            $0.top.equalToSuperview().offset(Constants.barViewTop)
+            $0.height.equalTo(Constants.barViewHeight)
         }
+        
         
         closeButton.snp.makeConstraints {
             $0.left.equalToSuperview()
             $0.width.equalTo(90)
-            $0.centerY.equalToSuperview()
+            $0.bottom.equalToSuperview()
             $0.height.equalTo(50)
         }
         
@@ -487,18 +574,19 @@ class OrdersDetailsViewController: UIViewController {
 
         tapWorkButton.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
-            $0.right.equalTo(tapZapButton).offset(-180)
+            $0.width.equalToSuperview().multipliedBy(0.42)
             $0.height.equalTo(40)
-            $0.top.equalTo(serviceTextField.snp.bottom).offset(16)
+            $0.top.equalTo(serviceTextField.snp.bottom).offset(24)
             $0.bottom.equalTo(box).offset(-20)
         }
 
         tapZapButton.snp.makeConstraints {
-            $0.left.equalTo(tapWorkButton).offset(180)
+            $0.width.equalToSuperview().multipliedBy(0.42)
             $0.right.equalToSuperview().offset(-16)
             $0.height.equalTo(40)
-            $0.bottom.equalTo(box).offset(-20)
+            $0.centerY.equalTo(tapWorkButton)
         }
         
     }
 }
+

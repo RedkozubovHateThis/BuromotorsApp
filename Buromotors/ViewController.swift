@@ -51,6 +51,11 @@ class ViewController: UIViewController, URLSessionDelegate {
         passwordForm.layer.borderWidth = 1
         passwordForm.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
         passwordForm.layer.cornerRadius = 10
+        
+//        loginForm.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+//        passwordForm.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        
+        
     }
     
     @IBAction func registratonButPress() {
@@ -103,4 +108,3 @@ class ViewController: UIViewController, URLSessionDelegate {
         performSegue(withIdentifier: "showOrderslist", sender: nil)
     }
 }
-
