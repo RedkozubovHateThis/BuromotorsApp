@@ -49,6 +49,7 @@ class RegUserViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Назад", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "System", size: 17)
         
         return button
     }()
@@ -137,15 +138,6 @@ class RegUserViewController: UIViewController {
         
         return emailField
     }()
-    
-//    private lazy var addressSpace: UITextField = {
-//        let userNameField = UITextField()
-//        userNameField.placeholder = "Адрес"
-//        userNameField.layer.cornerRadius = 10
-//        userNameField.borderStyle = .roundedRect
-//
-//        return userNameField
-//    }()
     
     private lazy var passwordSpace: UITextField = {
         let passwordSpaceField = UITextField()
@@ -409,8 +401,7 @@ class RegUserViewController: UIViewController {
         
         
         barView.snp.makeConstraints {
-            $0.left.equalToSuperview()
-            $0.right.equalToSuperview()
+            $0.left.right.equalToSuperview()
             $0.top.equalToSuperview().offset(Constants.barViewTop)
             $0.height.equalTo(Constants.barViewHeight)
         }
@@ -418,7 +409,7 @@ class RegUserViewController: UIViewController {
         closeButton.snp.makeConstraints {
             $0.left.equalToSuperview()
             $0.width.equalTo(90)
-            $0.centerY.equalToSuperview()
+            $0.bottom.equalToSuperview()
             $0.height.equalTo(50)
         }
         
