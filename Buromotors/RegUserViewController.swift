@@ -2,7 +2,7 @@
 //  RegUserViewController.swift
 //  Buromotors
 //
-//  Created by Ахмед Фокичев on 04.12.2020.
+//  Created by Антон Редкозубов on 04.12.2020.
 //  Copyright © 2020 Anton Redkozubov. All rights reserved.
 //
 
@@ -10,7 +10,31 @@ import UIKit
 import SnapKit
 
 class RegUserViewController: UIViewController {
-
+    
+    private enum Constants {
+        // TODO: - Adjust constants
+        static var barViewHeight: CGFloat {
+            switch UIScreen.deviceFamily {
+            case .fifthFamily:
+                return 60
+            case .sixFamily, .plusFamily:
+                return 60
+            case .xFamily, .elevenFamily:
+                return 90
+            }
+        }
+        static var barViewTop: CGFloat {
+            switch UIScreen.deviceFamily {
+            case .fifthFamily:
+                return 0
+            case .sixFamily, .plusFamily:
+                return 0
+            case .xFamily, .elevenFamily:
+                return 0
+            }
+        }
+    }
+    
     let athService = AthService()
     
     // MARK: - Subviews
@@ -114,14 +138,14 @@ class RegUserViewController: UIViewController {
         return emailField
     }()
     
-    private lazy var userNameSpace: UITextField = {
-        let userNameField = UITextField()
-        userNameField.placeholder = "Username"
-        userNameField.layer.cornerRadius = 10
-        userNameField.borderStyle = .roundedRect
-        
-        return userNameField
-    }()
+//    private lazy var addressSpace: UITextField = {
+//        let userNameField = UITextField()
+//        userNameField.placeholder = "Адрес"
+//        userNameField.layer.cornerRadius = 10
+//        userNameField.borderStyle = .roundedRect
+//
+//        return userNameField
+//    }()
     
     private lazy var passwordSpace: UITextField = {
         let passwordSpaceField = UITextField()
@@ -141,7 +165,7 @@ class RegUserViewController: UIViewController {
         return secondPassword
     }()
     
-    private lazy var adrresSpace: UITextField = {
+    private lazy var addressSpace: UITextField = {
         let adressNameField = UITextField()
         adressNameField.placeholder = "Адресс"
         adressNameField.layer.cornerRadius = 10
@@ -168,12 +192,88 @@ class RegUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        settupUi()
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         
         regButton.addTarget(self, action: #selector(regButtonTapped), for: .touchUpInside)
         
         segmentedControl.addTarget(self, action:  #selector(segmentedControlTapped), for:.allEvents)
+    }
+    
+    func settupUi() {
+        view.backgroundColor = .white
+        
+        innSpace.layer.borderWidth = 1
+        innSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        innSpace.layer.cornerRadius = 10
+        innSpace.borderStyle = .none
+        innSpace.clearButtonMode = .whileEditing
+        
+        nameSpace.layer.borderWidth = 1
+        nameSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        nameSpace.layer.cornerRadius = 10
+        nameSpace.borderStyle = .none
+        nameSpace.clearButtonMode = .whileEditing
+        
+        lastNameSpace.layer.borderWidth = 1
+        lastNameSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        lastNameSpace.layer.cornerRadius = 10
+        lastNameSpace.borderStyle = .none
+        lastNameSpace.clearButtonMode = .whileEditing
+        
+        secondNameSpace.layer.borderWidth = 1
+        secondNameSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        secondNameSpace.layer.cornerRadius = 10
+        secondNameSpace.borderStyle = .none
+        secondNameSpace.clearButtonMode = .whileEditing
+        
+        fioSpace.layer.borderWidth = 1
+        fioSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        fioSpace.layer.cornerRadius = 10
+        fioSpace.borderStyle = .none
+        fioSpace.clearButtonMode = .whileEditing
+        
+        telephoneSpace.layer.borderWidth = 1
+        telephoneSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        telephoneSpace.layer.cornerRadius = 10
+        telephoneSpace.borderStyle = .none
+        telephoneSpace.clearButtonMode = .whileEditing
+        
+        emailSpace.layer.borderWidth = 1
+        emailSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        emailSpace.layer.cornerRadius = 10
+        emailSpace.borderStyle = .none
+        emailSpace.clearButtonMode = .whileEditing
+        
+        passwordSpace.layer.borderWidth = 1
+        passwordSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        passwordSpace.layer.cornerRadius = 10
+        passwordSpace.borderStyle = .none
+        passwordSpace.clearButtonMode = .whileEditing
+        
+        secondPasswordSpace.layer.borderWidth = 1
+        secondPasswordSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        secondPasswordSpace.layer.cornerRadius = 10
+        secondPasswordSpace.borderStyle = .none
+        secondPasswordSpace.clearButtonMode = .whileEditing
+        
+        addressSpace.layer.borderWidth = 1
+        addressSpace.layer.borderColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0, alpha: 1)
+        addressSpace.layer.cornerRadius = 10
+        addressSpace.borderStyle = .none
+        addressSpace.clearButtonMode = .whileEditing
+        
+        
+        innSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        nameSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        lastNameSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        secondNameSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        fioSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        telephoneSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        emailSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        passwordSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        secondPasswordSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+        addressSpace.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
     }
 
     
@@ -198,30 +298,32 @@ class RegUserViewController: UIViewController {
            showMassege(title: "Внимание!", massage: "Введите имя")
            return
         }
+        
         guard let lastName = lastNameSpace.text, !lastName.isEmpty else {
            showMassege(title: "Внимание!", massage: "Введите фамилию")
            return
         }
+        
         guard let secondName = secondNameSpace.text, !secondName.isEmpty else {
            showMassege(title: "Внимание!", massage: "Введите отчество")
            return
         }
+        
         guard let telephone = telephoneSpace.text, !telephone.isEmpty else {
            showMassege(title: "Внимание!", massage: "Введите номер телефона")
            return
         }
+        
         guard let emailPlace = emailSpace.text, !emailPlace.isEmpty else {
            showMassege(title: "Внимание!", massage: "Введите отчество")
            return
         }
-        guard let userName = userNameSpace.text, !userName.isEmpty else {
-           showMassege(title: "Внимание!", massage: "Введите Username")
-           return
-        }
+        
         guard let passwordPlace = passwordSpace.text, !passwordPlace.isEmpty else {
            showMassege(title: "Внимание!", massage: "Введите Пароль")
            return
         }
+        
         guard let secondPassword = secondPasswordSpace.text, !secondPassword.isEmpty else {
             showMassege(title: "Внимание!", massage: "Введите Пароль еще раз")
             return
@@ -232,15 +334,13 @@ class RegUserViewController: UIViewController {
             return
         }
         
-        
-        
         let firstName = nameSpace.text ?? ""
         let lastNameValue = lastNameSpace.text ?? ""
         let middleName = secondNameSpace.text ?? ""
-        let address = adrresSpace.text ?? ""
+        let address = addressSpace.text ?? ""
         let phone = telephoneSpace.text ?? ""
         let email = emailSpace.text ?? ""
-        let userN = userNameSpace.text ?? ""
+        let fio = fioSpace.text ?? ""
         let password = passwordSpace.text ?? ""
         let rePassword = secondPasswordSpace.text ?? ""
         var inn: String?
@@ -263,11 +363,19 @@ class RegUserViewController: UIViewController {
         
         if password == rePassword {
             
-            let userProfile = UserProfile(type: type, firstName: firstName, lastName: lastNameValue, middleName: middleName, name: userN, address: address, phone: phone, inn: inn, email: email, rawPassword: password)
+            let userProfile = UserProfile(type: type, firstName: firstName, lastName: lastNameValue, middleName: middleName, name: fio, address: address, phone: phone, inn: inn, email: email, rawPassword: password)
+            print("userProfile>rawPassword>", userProfile.rawPassword)
             
-            athService.regstration(userProfile: userProfile,  password: password, rePassword: rePassword ) { (state, error) in
-                print("athService>state>", state)
+            athService.regstration(userProfile: userProfile,  password: password, rePassword: rePassword ) { [weak self] (state, error) in
+                if state {
+                    self?.dismiss(animated: true, completion: nil)
+                } else {
+                    self?.showMassege(title: "", massage: error.debugDescription)
+                }
+                
             }
+        } else {
+            self.showMassege(title: "", massage: "пароли не совпадают")
         }
     }
     
@@ -295,7 +403,7 @@ class RegUserViewController: UIViewController {
         box.addSubview(fioSpace)
         box.addSubview(telephoneSpace)
         box.addSubview(emailSpace)
-        box.addSubview(userNameSpace)
+        box.addSubview(addressSpace)
         box.addSubview(passwordSpace)
         box.addSubview(secondPasswordSpace)
         
@@ -303,8 +411,8 @@ class RegUserViewController: UIViewController {
         barView.snp.makeConstraints {
             $0.left.equalToSuperview()
             $0.right.equalToSuperview()
-            $0.top.equalToSuperview()
-            $0.height.equalTo(90)
+            $0.top.equalToSuperview().offset(Constants.barViewTop)
+            $0.height.equalTo(Constants.barViewHeight)
         }
         
         closeButton.snp.makeConstraints {
@@ -389,7 +497,7 @@ class RegUserViewController: UIViewController {
         }
         
         
-        userNameSpace.snp.makeConstraints {
+        addressSpace.snp.makeConstraints {
             $0.left.equalToSuperview().offset(16)
             $0.right.equalToSuperview().offset(-16)
             $0.height.equalTo(40)
@@ -400,7 +508,7 @@ class RegUserViewController: UIViewController {
             $0.left.equalToSuperview().offset(16)
             $0.right.equalToSuperview().offset(-16)
             $0.height.equalTo(40)
-            $0.top.equalTo(userNameSpace.snp.bottom).offset(10)
+            $0.top.equalTo(addressSpace.snp.bottom).offset(10)
         }
         
         secondPasswordSpace.snp.makeConstraints {

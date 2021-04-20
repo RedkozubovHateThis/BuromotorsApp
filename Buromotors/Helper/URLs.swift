@@ -14,7 +14,9 @@ struct URLs {
     static let advertisingUrl = "https://service.buromotors.ru:8080/api/external/adEntities/current"
     static let tokenUrl = "https://service.buromotors.ru:8080/api/oauth/token"
     static let profileUrl = "https://service.buromotors.ru:8080/api/external/users/currentUser"
-    static let profileRegistr = "https://service.buromotors.ru:8080/demo/oauth/register/" //"https://service.buromotors.ru:8080/api/oauth/register"
+    static let profileRegistr = "https://service.buromotors.ru:8080/api/oauth/register"
+    //https://service.buromotors.ru:8080/demo/oauth/register/"
+    //"https://service.buromotors.ru:8080/api/oauth/register"
     static let profileEdit = "https://service.buromotors.ru:8080/api/profiles/"
     static let userEdit = "https://service.buromotors.ru:8080/api/users/"
     
